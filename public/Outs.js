@@ -6,20 +6,6 @@ const scoreAny = [
     60, 57, 54, 51, 48, 45, 42, 39, 36, 33, 30, 27, 24, 21, 18, 15, 12, 9, 6, 3 // Triple
 ];
 
-// There is no extra value in this
-// const notationsAny = []
-// for (let i = 0; i < scoreAny.length; i++) {
-//     if (i < 20) {
-//         const verifiedValue = scoreAny[i] / 3;
-//         notationsAny.push(`T${verifiedValue}`);
-//     } else if (i<41){
-//         const verifiedValue = scoreAny[i] / 2;
-//         notationsAny.push(`D${verifiedValue}`);
-//     } else {
-//         notationsAny.push(`${scoreAny[i]}`);
-//     }
-// }
-// console.log(notationsAny);
 
 // All possible ending throws (at a double)
 const scoreDouble = [50, 40, 38, 36, 34, 32, 30, 28, 26, 24, 22, 20, 18, 16, 14, 12, 10, 8, 6, 4, 2];

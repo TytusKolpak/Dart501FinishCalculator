@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------- Hosting ----------------------------------------------------------------------
-import { initializeApp } from "firebase/app";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
 const firebaseConfig = {
     apiKey: "AIzaSyDwNQeWDwxoPOampRtnMVsyFW3xY89SN30",
     authDomain: "darts-8dc01.firebaseapp.com",
