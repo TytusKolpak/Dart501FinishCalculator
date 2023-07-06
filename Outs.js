@@ -208,6 +208,7 @@ function orderOutShots(divArray) {
 }
 
 function processKey(event) {
+    console.log("ok");
     if (event.key === "Enter") {
         event.preventDefault(); // Prevent the default form submission
         processValue(); // Call the function when Enter is pressed
@@ -216,6 +217,8 @@ function processKey(event) {
         document.getElementById("Twos").innerHTML = '';
         document.getElementById("Threes").innerHTML = '';
         document.getElementById("Error").innerHTML = '';
+    } else {
+        console.log("Key has no action bound to it.");
     }
 }
 
