@@ -1,0 +1,69 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    --colorValue: 40;
+    background-color: rgb(var(--colorValue), var(--colorValue), var(--colorValue));
+    /* background-image: url("https://cdn-icons-png.flaticon.com/256/11229/11229286.png"); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Inter', sans-serif;
+}
+
+.mainDisplay {
+    color: white;
+    min-height: 30vh;
+    /* max-height: 90vh; */
+    min-width: 50vh;
+    max-width: 90vh;
+    --colorValue: 60;
+    background-color: rgb(var(--colorValue), var(--colorValue), var(--colorValue));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+button, #numericInput {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: 88px;
+    height: 50px;
+    font-size: 2em;
+    text-align: center;
+}
+
+
+#Ones,
+#Twos,
+#Threes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#Ones div,
+#Twos div,
+#Threes div {
+    margin: 5px;
+    padding: 3px;
+    border-radius: 4px;
+}
+
+#Ones div {
+    background-color: #278EA5;
+}
+
+#Twos div {
+    background-color: #1F4287;
+}
+
+#Threes div {
+    background-color: #071E3D;
+}
+
+.goodShot {
+    border: 1px solid white;
+}
