@@ -12,13 +12,20 @@
 </head>
 
 <body>
+
     <div class="mainDisplay">
-        <h1>Target</h1>
+        <div id="underlyingDiv"></div>
+        <h1>Target
+            <span class="info-icon"
+                title="I am considering a 501 game of darts. Input the points You need to get in this round and I will show You what possible out-shots You can aim for. Each one is displayed in an individual cell. Please note that there might be some combination which You don't see because I assume that a value of 6 is possible to only be scored in one way, not as single 6, double 3 or triple 2. Additionally the ordering of shots is ignored therefore if You look for (D2,D4), but there is already (D4,D2) then You will not find it because these two are understood as one and the same."></span>
+        </h1>
         <div>
-            <input type="number" id="numericInput">
-            <button onclick="processValue()">Find</button>
+            <input type="number" id="numericInput" onchange="processValue()">
         </div>
-        <h1>Shots</h1>
+        <h1>Shots
+            <span class="info-icon"
+                title="Shots show what shot combinations you can make. The ones with a white border are considered good combinations because their last shot is divisible by 8 which means that if You hit a single value instead od doubled then you are left with target value which can still be scored by hitting a double value 3 times (at least). Example: You aim for D8 but You miss and hit single 8, now you can aim for D4, if you miss and hit single 4, then you are still left with D2 to aim for. If on the other hand you have to hit D7 then after a miss and scoring single 7 You can't end in the next shot as 7 can't be scored with a double. All shots are grouped by what shot they start with, so if You miss completely then You can still follow without recalculating out shots for different target score."></span>
+        </h1>
         <div id="Ones"></div>
         <div id="Twos"></div>
         <div id="Threes"></div>
