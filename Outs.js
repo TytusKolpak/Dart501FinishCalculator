@@ -238,7 +238,7 @@ function processValue() {
         displayNoFoundOutShotsError()
     } else {
         createOutShotNotation()
-        //Now we have table with alphanumeric translations: osutShots
+        //Now we have table with alphanumeric translations: outShots
     }
 
     // Display results
