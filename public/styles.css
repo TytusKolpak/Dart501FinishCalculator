@@ -60,6 +60,7 @@ body {
     padding: 0;
     border-radius: 5px;
     width: 350px;
+    max-width: 85vw;
     height: 50px;
     font-size: 2em;
     text-align: center;
