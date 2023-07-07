@@ -237,4 +237,4 @@ function processValue() {
     orderOutShots(["Twos"])
 }
 
-// TODO: Group bad Threes in rows of collections starting from the same value
+// TODO: put outShots with two throws into the div for tripe throw outShots (will look neater)
