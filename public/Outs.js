@@ -1,3 +1,6 @@
+document.addEventListener("DOMContentLoaded", () => {
+    $(".mainDisplay").hide();
+  });  
 // ---------------------------------------------------------------------- Variable declarations ----------------------------------------------------------------------
 // Any possible throw
 const scoreAny = [

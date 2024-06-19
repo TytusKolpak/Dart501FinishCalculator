@@ -1,107 +1,129 @@
 body {
-    margin: 0;
-    --colorValue: 40;
-    background-color: rgb(var(--colorValue), var(--colorValue), var(--colorValue));
-    /* background-image: url("https://cdn-icons-png.flaticon.com/256/11229/11229286.png"); */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-family: 'Inter', sans-serif;
+  margin: 0;
+  --colorValue: 40;
+  background-color: rgb(
+    var(--colorValue),
+    var(--colorValue),
+    var(--colorValue)
+  );
+  /* background-image: url("https://cdn-icons-png.flaticon.com/256/11229/11229286.png"); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Inter", sans-serif;
 }
 
-.info-icon {
-    display: inline-block;
-    width: 17px;
-    height: 17px;
-    position: relative;
-    top: -1.5em;
-    font-size: 13px;
-    text-align: center;
-    cursor: pointer;
+.grid3x4 {
+  height: inherit;
+  width: 60vw;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-template-rows: repeat(4, 1fr); /* 4 rows */
+  gap: 10px; /* Optional: adds space between grid items */
 }
 
-.info-icon::before {
-    content: 'i';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    border: 1px solid #fff;
-    /* White border */
+.grid3x4 > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  padding: 20px;
+  font-size: 3rem;
+}
+
+.messageToPlayer,
+.inputValue {
+  text-align: center;
+  margin-top: 1rem;
+  color: white;
+  font-size: 3rem;
+}
+
+a {
+  font-size: 2rem;
+  color: white;
+  text-decoration: none;
+}
+
+.NavbarTK {
+  width: 85vw;
+  display: flex;
+  justify-content: space-around;
 }
 
 .mainDisplay {
-    color: white;
-    min-height: 30vh;
-    width: 80vw;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+  height: 80vh;
+  color: white;
+  width: 85vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 #underlyingDiv {
-    position: fixed;
-    z-index: -1;
-    height: 50vh;
-    width: 85vw;
-    --colorValue: 60;
-    background: linear-gradient(to bottom, rgb(var(--colorValue), var(--colorValue), var(--colorValue)), rgba(255, 0, 0, 0));
+  position: fixed;
+  z-index: -1;
+  height: 50vh;
+  width: 85vw;
+  --colorValue: 60;
+  background: linear-gradient(
+    to bottom,
+    rgb(var(--colorValue), var(--colorValue), var(--colorValue)),
+    rgba(255, 0, 0, 0)
+  );
 }
 
 #numericInput {
-    border: solid 1px white;
-    color: white;
-    --colorValue: 20;
-    background: rgb(var(--colorValue), var(--colorValue), var(--colorValue));
-    margin: 0;
-    padding: 0;
-    border-radius: 5px;
-    width: 350px;
-    max-width: 60vw;
-    height: 50px;
-    font-size: 2em;
-    text-align: center;
+  border: solid 1px white;
+  color: white;
+  --colorValue: 20;
+  background: rgb(var(--colorValue), var(--colorValue), var(--colorValue));
+  margin: 0;
+  padding: 0;
+  border-radius: 5px;
+  width: 350px;
+  max-width: 60vw;
+  height: 50px;
+  font-size: 2em;
+  text-align: center;
 }
-
 
 #Ones,
 #Twos,
 #Threes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 #Ones div,
 #Twos div,
 #Threes div {
-    margin: 5px;
-    padding: 4px;
-    border-radius: 4px;
+  margin: 5px;
+  padding: 4px;
+  border-radius: 4px;
 }
 
 #Ones div {
-    background-color: #278EA5;
+  background-color: #278ea5;
 }
 
 #Twos div {
-    background-color: #1F4287;
+  background-color: #1f4287;
 }
 
 #Threes div {
-    background-color: #071E3D;
+  background-color: #071e3d;
 }
 
 .goodShot {
-    border: 1px solid white;
+  border: 1px solid white;
 }
 
-#Threes>div:not([class])>div:not([class]) {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    padding-top: 0px;
-    padding-bottom: 0px;
+#Threes > div:not([class]) > div:not([class]) {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }

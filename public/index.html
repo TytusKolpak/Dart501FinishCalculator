@@ -1,40 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!-- Beware: firebase deploy --only hosting:tk501 pushes the main branch :D -->
-    <!-- Beware: THE BROWSER WILL HAVE OLD FILES IN CACHE AND ALTHOUGH YOU HAVE CHANGED THEM, OLD ERRORS WILL REMAIN UNTIL YOU REFRESH CTRL+F5 NOT JUST F5-->
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Beware: firebase deploy --only hosting:tk501 pushes the main branch :D -->
+  <!-- Beware: THE BROWSER WILL HAVE OLD FILES IN CACHE AND ALTHOUGH YOU HAVE CHANGED THEM, OLD ERRORS WILL REMAIN UNTIL YOU REFRESH CTRL+F5 NOT JUST F5-->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Darts</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-    <link rel="stylesheet" href="styles.css">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="Outs.js"></script>
+    <script src="counting.js"></script>
+    <script src="routing.js"></script>
 
-    
     <script type="module" src="firebase.js"></script>
+  </head>
 
-</head>
-
-<body>
-
-    <div class="mainDisplay">
-        <div id="underlyingDiv"></div>
-        <h1>Target
-            <span class="info-icon"
-                title="I am considering a 501 game of darts. Input the points You need to get in this round and I will show You what possible out-shots You can aim for. Each one is displayed in an individual cell. Please note that there might be some combination which You don't see because I assume that a value of 6 is possible to only be scored in one way, not as single 6, double 3 or triple 2. Additionally the ordering of shots is ignored therefore if You look for (D2,D4), but there is already (D4,D2) then You will not find it because these two are understood as one and the same."></span>
-        </h1>
-        <div>
-            <input type="number" id="numericInput" onchange="processValue()" placeholder="score">
-        </div>
-        <h1>Shots
-            <span class="info-icon"
-                title="Shots show what shot combinations you can make. The ones with a white border are considered good combinations because their last shot is divisible by 8 which means that if You hit a single value instead od doubled then you are left with target value which can still be scored by hitting a double value 3 times (at least). Example: You aim for D8 but You miss and hit single 8, now you can aim for D4, if you miss and hit single 4, then you are still left with D2 to aim for. If on the other hand you have to hit D7 then after a miss and scoring single 7 You can't end in the next shot as 7 can't be scored with a double. All shots are grouped by what shot they start with, so if You miss completely then You can still follow without recalculating out shots for different target score."></span>
-        </h1>
-        <div id="Ones"></div>
-        <div id="Twos"></div>
-        <div id="Threes"></div>
-        <div id="ErrorMessage"></div>
+  <body>
+    <div class="NavbarTK">
+      <a href="#" data-page="points" onclick="navButtonClicked('P')">Points</a>
+      <a href="#" data-page="shots" onclick="navButtonClicked('S')">Shots</a>
     </div>
-</body>
-
+    <div class="mainDisplay pageP">
+      <div class="grid3x4">
+        <div class="1" onclick="numPadClicked('1')">1</div>
+        <div class="2" onclick="numPadClicked('2')">2</div>
+        <div class="3" onclick="numPadClicked('3')">3</div>
+        <div class="4" onclick="numPadClicked('4')">4</div>
+        <div class="5" onclick="numPadClicked('5')">5</div>
+        <div class="6" onclick="numPadClicked('6')">6</div>
+        <div class="7" onclick="numPadClicked('7')">7</div>
+        <div class="8" onclick="numPadClicked('8')">8</div>
+        <div class="9" onclick="numPadClicked('9')">9</div>
+        <div class="ok" onclick="numPadClicked('ok')">Ok</div>
+        <div class="0" onclick="numPadClicked('0')">0</div>
+        <div class="del" onclick="numPadClicked('del')">Del</div>
+      </div>
+    </div>
+    <div class="mainDisplay pageS">
+      <div id="underlyingDiv"></div>
+      <h1>Target</h1>
+      <div>
+        <input
+          type="number"
+          id="numericInput"
+          onchange="processValue()"
+          placeholder="score"
+        />
+      </div>
+      <h1>Shots</h1>
+      <div id="Ones"></div>
+      <div id="Twos"></div>
+      <div id="Threes"></div>
+      <div id="ErrorMessage"></div>
+    </div>
+    <div class="inputValue"></div>
+    <div class="messageToPlayer"></div>
+  </body>
 </html>
